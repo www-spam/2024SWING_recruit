@@ -1,0 +1,26 @@
+
+  .max-width-1200 {
+    width: min(1200px, 100%);
+
+    margin: auto;
+  }
+  @media screen and (max-width: 768px) {
+    .max-width-1200 {
+      padding: 0 16px;
+    }
+  }
+
+  .animation-reveal {
+    animation: reveal both linear;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

@@ -1,0 +1,142 @@
+.gotoQna {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  
+}
+
+.gotoQna > button {
+  font-size: var(--heading3);
+  background-color: var(--blue-1);
+  padding: var(--gutter) var(--offset);
+  border-radius: 20px;
+  color: black !important;
+  position: relative;
+  display: grid;
+  text-align: center;
+  align-self: center; 
+
+}
+
+.gotoQna > span {
+  font-size: var(--heading3);
+  text-align: center;
+  overflow: auto;
+  padding-bottom: 5rem;
+  color: var(--white);
+  pace: pre-line;
+  line-height: 2.0;
+  display: inline-block;
+  margin-top: 5rem;
+  align-self: center; 
+}
+
+.gotoQna > button:hover {
+  top: -2px;
+}
+
+@media screen and (max-width: 1080px) {
+
+  .gotoQna > button {
+    font-size: 2vw;
+  }
+  .gotoQna > span {
+    font-size: 2vw;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gotoQna {
+
+    margin-top: 0;
+    
+  }
+  .gotoQna > button {
+    font-size: 3vw;
+    margin-top: 2rem;
+  }
+  .gotoQna > span {
+    font-size: 3vw;
+    padding: 2rem;
+    line-height: 2.0;
+  }
+  
+}
+
+
+
+.recruit-faq {
+    padding-bottom: 30rem !important;
+    
+  }
+  .faqContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .toggle {
+    width: min(100%, 800px);
+  }
+  .toggle:last-child {
+    border-bottom: 1px solid var(--line-gray);
+  }
+  .toggleTitle {
+    position: relative;
+    display: block;
+    border-top: 1px solid var(--line-gray);
+    margin-bottom: 6px;
+    word-break: keep-all;
+    line-height: 2rem;
+  }
+  .titleName {
+    word-break: keep-all;
+    line-height: 2.5rem;
+  }
+  .toggleTitle h3 {
+    font-size: var(--subheading);
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 200;
+    display: flex;
+    padding: 25px 25px 14px;
+    gap: var(--gutter);
+    align-items: center;
+    color: white;
+  }
+  .toggleTitle h3 i {
+    color: var(--blue-1);
+    font-size: var(--heading3);
+  }
+  @media screen and (max-width: 600px){
+    .toggleTitle h3,
+    .toggleTitle h3 i {
+      font-size: var(--body1);
+    }
+  }
+  .toggleInner {
+    padding: 7px 25px 10px 25px;
+    display: none;
+    margin: -7px 0 var(--gutter);
+    font-size: var(--body1);
+    line-height: 1.25rem;
+    white-space: pre-line;
+  }
+  .toggleInner > p {
+    word-break: keep-all;
+    color: var(--subtext-gray)
+  }
+  .toggleTitle.active + .toggleInner {
+    display: block;
+  }
+  
+  .faq-text {
+    font-size: var(--caption);
+    color: var(--blue-1);
+    text-align: center;
+    padding-bottom:0.625rem;
+
+  }

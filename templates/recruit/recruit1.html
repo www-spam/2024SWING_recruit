@@ -1,0 +1,458 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SWING</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/countdown.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/recruit_main.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/faq.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/recruiting-process2.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/base.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/utils.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/mail.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/nextActivity.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recruit/recentActivity.css' %}" >
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script defer src="{% static 'js/recruit/faq.js' %}"></script>
+    <script defer src="{% static 'js/recruit/countdown.js' %}"></script>
+
+    <script defer src="{% static 'js/recruit/nextActivity_tab.js' %}"></script>
+    <script defer src="{% static 'js/recruit/recentActivity_tab.js' %}"></script>
+    <script defer src="{% static 'js/recruit/recruitingProcess.js' %}"></script>
+</head>
+</head>
+<body>
+    <section id="recruit">
+        <div class="recruit-content">
+            
+          <h1><b>SWING MEMBER RECRUITING</b></h1>
+            <h2>신입 모집 마감까지</h2>
+          
+          <div class="container">
+            <div class="box">
+                <cap id="days-text">Days</cap>
+                <p id="days">00</p>
+            </div>
+            <div class="box">
+              <p class="colon">:</p>
+          </div>
+            <div class="box">
+                <cap id="hours-text">Hours</cap>
+                <p id="hours">00</p>
+            </div>
+            <div class="box">
+              <p class="colon">:</p>
+          </div>
+            <div class="box">
+                <cap id="minutes-text">Minutes</cap>
+                <p id="minutes">00</p>
+            </div>
+            <div class="box">
+              <p class="colon">:</p>
+          </div>
+            <div class="box">
+                <cap id="seconds-text">Seconds</cap>
+                <p id="seconds">00</p>
+            </div>
+        </div>
+        <div class="alert">
+        </div>
+
+          <button onclick="gotoApplyform()">지원서 양식</button>
+
+        </div>
+    </section>
+ 
+    <div class="caption">
+      <span>SWING의 인재상</span></div>
+      <div class="main-section--header animation-reveal">모집 대상</div>
+      <div class="recruit-target recruit-common animation-reveal">
+        <span>정보보호에 관심이 있는 24학번
+          정보보호에 자신 있고, 프로젝트를 진행하고 싶은 23학번</span>
+            <p>(*23학번은 31기로 24학번은 32기로 모집합니다.)</p>
+        </div>
+
+        <div class="caption">
+          <span>SWING에 들어가고 싶어요!</span></div>
+        <div class="main-section--header animation-reveal">지원 방법</div>
+
+  <button class="letter-image" onclick="sendEmail()">
+    <div class="animated-mail">
+      <div class="back-fold"></div>
+      <div class="letter">
+        <div class="letter-border"></div>
+        <div class="letter-title"></div>
+        <div class="letter-context"></div>
+        <div class="letter-stamp">
+          <div class="letter-stamp-inner"></div>
+        </div>
+      </div>
+      <div class="top-fold"></div>
+      <div class="body"></div>
+      <div class="left-fold"></div>
+    </div>
+
+  </button>
+</div>
+
+
+<!--클릭 유도 메시지-->
+<div class="flickerr">
+  <span>클릭!지원하러 가기</span></div>
+  <!--이메일-->
+ <div class="email-text animation-reveal">swu.swing@gmail.com</div>
+        <!--지원 방법-->
+        <div class="recruit-method recruit-common animation-reveal">
+          
+          <span>1학년 : 신입회원 지원서
+            2학년 : 신입회원 지원서 + 보고서
+
+            자신의 기수에 맞는 지원서로 제출해 주시기를 바랍니다.
+            31기 신입회원 지원 보고서 참고 자료의 경우 참고일 뿐 주제는 자유롭게 해주시면 됩니다.
+            * 양식은 제공된 양식을 그대로 사용 (필히 엄수)</span>
+
+          </div>
+    
+
+
+
+
+      <!--모집 일정-->
+      <div class="recruiting-process animation-reveal">
+        <div class="caption">
+          <span>recruiting process</span></div>
+        <div class="recruitingHeader main-section--header blend">
+          모집 일정
+        </div>
+        <div class="guide">
+          <span>* 모집설명회, 면접, OT 모두 대면으로 진행되며, 이후 일정은 소학회 내부에서 공지됩니다.</span>
+        </div>
+        <div class="recruitingContent--container">
+          <section class="recruitingContent max-width-1200">
+            <div class="recruitingWeek">
+              <div class="recruitingWhen">3.6(수) 19:00</div>
+              <div class="ball"><div></div></div>
+              <div class="recruitingWhat">
+                <div class="recruitingWhat--container">모집 설명회</div>
+              </div>
+            </div>
+            <div class="recruitingWeek">
+              <div class="recruitingWhen">3.1(금) ~ 3.7(목)</div>
+              <div class="ball"><div></div></div>
+              <div class="recruitingWhat">
+                <div class="recruitingWhat--container">지원서 제출</div>
+              </div>
+            </div>
+            <div class="recruitingWeek">
+              <div class="recruitingWhen">3.10(토) 14:00</div>
+              <div class="ball"><div></div></div>
+              <div class="recruitingWhat">
+                <div class="recruitingWhat--container">면접자 발표</div>
+              </div>
+            </div>
+            <div class="recruitingWeek">
+              <div class="recruitingWhen">3.11(월) & 3.12(화) 19:00 ~</div>
+              <div class="ball"><div></div></div>
+              <div class="recruitingWhat">
+                <div class="recruitingWhat--container">면접 기간</div>
+              </div>
+            </div>
+            <div class="recruitingWeek">
+              <div class="recruitingWhen">3.13(수) 10:00</div>
+              <div class="ball"><div></div></div>
+              <div class="recruitingWhat">
+                <div class="recruitingWhat--container">최종 발표</div>
+              </div>
+            </div>
+            <div class="recruitingWeek">
+              <div class="recruitingWhen">3.13(수) 19:00</div>
+              <div class="ball"><div></div></div>
+              <div class="recruitingWhat">
+                <div class="recruitingWhat--container">신입생 OT</div>
+              </div>
+            </div>
+            <div class="recruitingWeek">
+              <div class="recruitingWhen">3.14(목) 19:00</div>
+              <div class="ball"><div></div></div>
+              <div class="recruitingWhat">
+                <div class="recruitingWhat--container">활동 시작</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+
+        <!--모집 일정 추가 안내 텍스트--->
+        <div class="guide-container animation-reveal">
+        <div class="guide">
+          <li> 3/6 19:00 모집 설명회 : 사전 신청자에 한해 진행 (대면/비대면 선택)</li>
+          <li>3/10 14:00 면접 대상자 발표 : 1차 합격자에게 문자로 발표 예정 (불합격자에게는 문자 발송 X)</li>
+          <li>3/11~ 3/12 면접 진행 : 대면으로 3/11, 3/12 중 정해진 날짜에 19:00 부터 면접 진행</li>
+          <li>3/13 19:00 신입생 OT와 3/14 19:00 부터 시작되는 회의 및 스터디는 대면, 필수 참여 입니다.</li>
+          <li>이후 시험기간 및 방학 제외한 매주 목요일 19:00 정기 회의 및 스터디가 진행될 예정이오니 일정에 참고 바랍니다.</li>
+        </div>
+      </div>
+    </div>
+      
+
+
+      <!--작년 swing 활동-->
+    
+      <div class="recruit-recentActivity animation-reveal">
+        <div class="caption">
+          <span>SWING은 작년에 이런 일을 했어요</span></div>
+        <div class="recentActivity-header main-section--header"> Achievement in 2023</div>
+
+
+        <div class="recent-tabButtons-text" id="recenttabButtons">
+            <div class="recent-tabButton active" onclick="recentShowTab('rtab1')">세미나 발표</div>
+            <div class="recent-tabButton" onclick="recentShowTab('rtab2')">논문 게재 및 발표</div>
+            <div class="recent-tabButton" onclick="recentShowTab('rtab3')">참여 연구 및 특허</div>
+            <div class="recent-tabButton" onclick="recentShowTab('rtab4')">타대학과의 연합 활동</div>
+            <div class="recent-tabButton" onclick="recentShowTab('rtab5')">대회 성과</div>
+            <div class="recent-tabButton" onclick="recentShowTab('rtab6')">외부 교육</div>
+            <div class="recent-tabButton" onclick="recentShowTab('rtab7')">기타 활동</div>
+        </div>
+    
+
+        <div class="recent-tab-Content max-width-1200 ">
+            <div class="recent-tabContent active" id="rtab1recentContent">
+                <div class="recent-tabText">
+                  <div>Incognito "ADVERSARIAL ATTACK: 악성코드 이미지 오분류"</div>
+                  <div>Incognito "Hyper-V를 이용한 나만의 망분리"</div>
+                  <div>Incognito "안드로이드 기기의 블루투스 시스템 취약점(블루본) 분석"</div>
+                  <div>제 12회 레몬세미나 "보안이 어려운 이유
+                    (부제 : Side Channel Attack 맛보기)"</div>
+                  <div>CCA "악성코드 분석 시작하기"</div>
+                  <div>SKS 세미나 "시나리오 기반 스마트워치 포렌식"</div>
+                  <div>SKS 세미나 "SBOM으로 들여다보는 소프트웨어 공급망 공격"</div>
+                </div>
+            </div>
+
+
+            <div class="recent-tabContent" id="rtab2recentContent">
+                <div class="recent-tabText">
+                  <div>한국정보보호학회 하계학술대회 "ROS2 공격 기술 동향 분석"</div>
+                  <div>한국정보보호학회 동계학술대회 "ROS2 전송 계층 프로토콜 취약점"</div>
+                </div>
+            </div>
+            
+
+            <div class="recent-tabContent" id="rtab3recentContent">
+              <div class="recent-tabText">
+                  <div>23’ 정보통신기획평가원, “안전한 스마트홈 IoT 서비스를 위한 취약점 모니터링 연구”</div>
+              </div>
+          </div>
+
+
+          <div class="recent-tabContent" id="rtab4recentContent">
+            <div class="recent-tabText">
+                <div>고려대 KUICS, 세종대 SSG - SKS 연합 스터디 및 세미나 개최</div>
+            </div>
+        </div>
+
+
+        <div class="recent-tabContent" id="rtab5recentContent">
+          <div class="recent-tabText">
+            <div>Girls in ICT 2023 최우수상</div>
+            <div>교내개인정보보호경진대회 대상, 최우수상, 우수상</div>
+            <div>교내 GURU 해커톤 대회 우수상, 장려상</div>
+            <div>제10회 SW개발보안경진대회 “넷이왔어요 팀” 행정안전부장관상</div>
+            <div>금융보안아카데미 장려상</div>
+          </div>
+      </div>
+
+
+        <div class="recent-tabContent" id="rtab6recentContent">
+          <div class="recent-tabText">
+            <div>Best of Best(BoB) 12기 </div>
+              <span>취약점 분석 | 보안 컨설팅 | 디지털 포렌식 | 보안제품개발 트랙 수료</span>
+            <div>금융보안아카데미 1기 수료</div>
+            <div>화이트햇 스쿨 1기 수료</div>
+            <div>LG Aimers</div>
+            <div>S 개발자 교육 수료</div>
+            <div>K-Shield Jr. 10기 수료</div>
+          </div>
+      </div>
+
+      
+      <div class="recent-tabContent" id="rtab7recentContent">
+        <div class="recent-tabText">
+            <div>서울여자대학교, 단대서버관리</div>
+            <div>서울여자대학교, 정보보호영재교육원 튜터</div>
+            <div>서울여자대학교 소프트웨어중심대학추진사업단, 소프트웨어중심대학 홈페이지 및 인공지능 서버 관리</div>
+            <div>Physical Lab (하드웨어 연구)</div>
+            <div>INC0GNITO, INC0GNITO CTF 운영</div>
+        </div>
+    </div>
+
+            <!-- 다른 탭들의 내용도 추가 -->
+        </div>
+    </div>
+
+
+
+<!--올해 swing 활동-->
+    <div class="recruit-nextActivity animation-reveal">
+
+       
+    <div class="caption">
+      <span>SWING에서는 무엇을 할까?</span></div>
+        <div class="nextActivity-header main-section--header">2024 SWING ACTIVITY</div>
+        <div class="tabButtons-text" id="tabButtons">
+            <div class="tabButton active" onclick="showTab('tab1')">내부 활동</div>
+            <div class="tabButton" onclick="showTab('tab2')">외부 활동</div>
+        </div>
+    
+        <div class="tab-Content max-width-1200 ">
+            <div class="tabContent active" id="tab1Content">
+                <div class="tabText">
+                  <div>연간 프로젝트 2024 SWING Security Magazine 발간</div>
+                  <div>주기적인 CTF 참여, 외부 전문가 초청 특강, 멘토데이, 매달 보안 카드뉴스 제작 및 기술 블로그 작성</div>
+                  <div>1학기 : 선배 스터디, SSR (*개인 연구 진행)</div>
+                  <div>방학 중 : 해킹 기초 스터디, 내부세미나, 내부 CTF 대회</div>
+                  <div>2학기 : Security Magazine 작성, 선배 스터디, 홈커밍 데이</div>
+              </div>
+                </div>
+            </div>
+
+
+            <div class="tabContent max-width-1200 " id="tab2Content">
+                <div class="tabText">
+                  <div>KUCIS : KISIA 지원 대학 정보보호 동아리 연합회</div>
+                  <div>INC0GNITO : 대학 정보보호 연합 컨퍼런스</div>
+                  <div>CCA : 전국 사이버보안 동아리 연합</div>
+                  <div>연합 세미나 & 스터디 및 외부 세미나 참가</div>
+                </div>
+            </div>
+            <!-- 다른 탭들의 내용도 추가 -->
+
+
+    </div>
+    <!--faq-->
+    <div class="recruit-faq max-width-1200 animation-reveal">
+      <div class="caption">
+        <span>자주 묻는 질문</span></div>
+      <div class="faqHeader main-section--header">FAQ</div>
+      <div class="faqContent">
+        <div class="toggle">
+          <div class="toggleTitle">
+            <h3>
+              <i>Q</i>
+              <span class="titleName">몇 명 모집하나요?</span>
+            </h3>
+          </div>
+          <div class="toggleInner">
+            <p>
+              인원 제한을 두고 있지 않습니다. 
+              보안을 향한 열정과 끈기, 책임감이 있거나 잠재력을 가지신 분이라면 충분히 SWING과 함께하실 수 있습니다.
+            </p>
+          </div>
+        </div>
+        
+        <div class="toggle">
+          <div class="toggleTitle">
+            <h3>
+              <i>Q</i>
+              <span class="titleName">보안과 관련된 지식이 없어도 합격할 수 있나요?</span>
+            </h3>
+          </div>
+          <div class="toggleInner">
+            <p>
+              1학년은 보안 지식보다는 보안 공부를 향한 욕심과 열정이 있다면 충분히 SWING에서 활동할 수 있습니다.
+              
+              2학년인 경우에는 기본적인 전공 지식을 갖추고 열정과 끈기를 가지고 있다면 충분히 SWIGN에서 활동할 수 있습니다.
+            </p>
+          </div>
+        </div>
+        
+        <div class="toggle">
+          <div class="toggleTitle">
+            <h3>
+              <i>Q</i>
+              <span class="titleName">2학기에도 모집하나요?</span>
+            </h3>
+          </div>
+          <div class="toggleInner">
+            <p>
+              SWING은 1학기에만 1/2학년을 대상으로 모집합니다.
+              
+              - 2학년 : 31기
+              - 1학년 : 32기
+            </p>
+          </div>
+        </div>
+        
+        <div class="toggle">
+          <div class="toggleTitle">
+            <h3>
+              <i>Q</i>
+              <span class="titleName">경쟁률은 어떻게 되나요?</span>
+            </h3>
+          </div>
+          <div class="toggleInner">
+            <p>
+              약 3년 간의 통계 결과, 약 2.5:1 정도입니다. 
+            </p>
+          </div>
+        </div>
+        
+        <div class="toggle">
+          <div class="toggleTitle">
+            <h3>
+              <i>Q</i>
+              <span class="titleName">활동 기간은 언제까지인가요?</span>
+            </h3>
+          </div>
+          <div class="toggleInner">
+            <p>
+              공식적인 활동 기간은 3학년까지입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="gotoQna animation-reveal">
+        <span>더 궁금한 점이 있으신가요? SWING에게 물어보세요! 
+          1:1로 직접 답해드리겠습니다.</span>
+        <!--QnA 바로가기 버튼-->
+      <button onclick="gotoQNA()">QnA 바로가기</button>
+    </div>
+    </div>
+      
+      <script>
+  function notification()  {
+    //모집 알림 설정 구글폼 링크 여기 넣어주세요
+    window.location.href = "https://forms.gle/XTuV5WrymknsCCJF9 ";
+  }      
+
+  function gotoApplyform()  {
+          
+    window.open("https://linktr.ee/swu.swing", "_blank");
+    
+  }      
+
+  function sendEmail() {
+    window.location.href = "mailto:swu.swing@gmail.com";
+  }
+  function gotoQNA() {
+    window.location.href = "/qna";
+  }
+
+      </script>
+
+    
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,126 @@
+.recruit-recentActivity {
+    padding-bottom: 15rem;
+}
+
+#recent-tabButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.recent-tabButton {
+    cursor: pointer;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    color: var(white);
+    background-color: inherit;
+    font-size: 18px;
+    min-width: 160px;
+    margin: 0 0 6rem;
+}
+
+.recent-tabButton:hover {
+    color: #000000;
+    background-color: var(--blue-1);
+}
+
+.recent-tabButton.active {
+    color: #000000;
+    background-color: var(--blue-1);
+}
+
+.recent-tabContent {
+    display: none;
+}
+
+.recent-tabContent.active {
+    display: block;
+}
+
+.recent-tabButtons-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.recent-tabText {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.28px;
+    white-space: pre-line;
+    border-radius: 30px;
+    background: url('../../image/recruit/circle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10rem 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.recent-tabText > span {
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.28px;
+    white-space: pre-line;
+    border-radius: 30px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .recent-tabButton {
+        font-size: 2vw;
+        padding: 2vw 2vw;
+        min-width: 15vw;
+        margin: 0 0 1rem;
+        border-radius: 2vw;
+    }
+
+    .recent-tabText {
+        font-size: 2.8vw;
+        padding: 20vw 5vw;
+        gap:0;
+        line-height: 2.0
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .recent-tabButton {
+        font-size: 2vw;
+        padding: 2vw 2vw;
+        min-width: 15vw;
+        margin: 0 0 1rem;
+        border-radius: 2vw;
+    }
+
+    .recent-tabText {
+        font-size: 2.8vw;
+        padding: 20vw 5vw;
+        gap:0;
+        line-height: 2.0
+    }
+    .recent-tabText > span {
+        font-size: 1.5vw;
+        line-height: 2.0
+    }
+}

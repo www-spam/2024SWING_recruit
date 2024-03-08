@@ -1,0 +1,121 @@
+.recruit-nextActivity {
+    padding-bottom: 15rem;
+}
+#tabButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    
+}
+
+.tabButton {
+    cursor: pointer;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    color: var(white);
+    background-color: inherit;
+    font-size: 18px;
+    min-width: 160px;
+    margin: 0 0 6rem;
+}
+
+.tabButton:hover {
+    color: #000000;
+    background-color: var(--blue-1);
+
+}
+
+.tabButton.active {
+    color: #000000;
+    background-color: var(--blue-1);
+}
+
+.tabContent {
+    display: none;
+}
+
+.tabContent.active {
+    display: block;
+}
+
+.tabButtons-text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.tabText {
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.28px;
+    white-space: pre-line;
+    border-radius: 30px;
+    background: #172229;
+    padding: 60px 80px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    line-height: 40px;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.tabText div::before {
+    content: '💡';
+    padding-right: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .tabButton {
+        font-size: 2vw;
+        padding: 2vw 2vw;
+        min-width: 15vw;
+        margin: 0 0 1rem;
+        border-radius: 2vw;
+    }
+
+    .tabText {
+        font-size: 2.8vw;
+        padding: 20vw 5vw;
+        gap:0;
+        line-height: 2.0
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tabButton {
+        font-size: 4vw;
+        padding: 3vw 6vw;
+        min-width: 15vw;
+        margin: 0 0 1rem;
+        border-radius: 2.5vw;
+    }
+
+    .tabText {
+        font-size: 2.8vw;
+        padding: 8vw 5vw;
+        line-height: 1.5;
+        margin-top: 3rem;
+        gap: 1rem;
+    }
+}

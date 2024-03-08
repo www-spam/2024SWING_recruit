@@ -1,0 +1,176 @@
+.letter-container {
+ 
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; 
+  text-align: center; 
+}
+.letter-image {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  margin-right: 20px;
+  position: relative; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+
+.email-text {
+  font-size: var(--heading1); 
+  position: relative; 
+  z-index: 1; 
+  margin-top: 0.625rem; 
+  text-align: center;
+}
+
+.animated-mail {
+  position: relative;
+  height: 75px;
+  width: 100px;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  transition: .4s;
+}
+
+.animated-mail .body {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 50px 100px;
+  border-color: transparent transparent var(--blue-2) transparent;
+  z-index: 2;
+}
+
+.animated-mail .top-fold {
+  position: absolute;
+  top: 25px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 50px 0 50px;
+  -webkit-transform-origin: 50% 0%;
+  -webkit-transition: transform .4s .4s, z-index .2s .4s;
+  -moz-transform-origin: 50% 0%;
+  -moz-transition: transform .4s .4s, z-index .2s .4s;
+  transform-origin: 50% 0%;
+  transition: transform .4s .4s, z-index .2s .4s;
+  border-color: var(--blue-4) transparent transparent transparent;
+  z-index: 2;
+}
+
+.animated-mail .back-fold {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 50px;
+  background: var(--blue-4);
+  z-index: 0;
+}
+
+.animated-mail .left-fold {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 0 25px 50px;
+  border-color: transparent transparent transparent var(--blue-1);
+  z-index: 2;
+}
+
+.animated-mail .letter {
+  left: 10px;
+  bottom: 0px;
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background: white;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transition: .4s .2s;
+  -moz-transition: .4s .2s;
+  transition: .4s .2s;
+}
+
+.animated-mail .letter .letter-border {
+  height: 5px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--blue-3),
+    var(--blue-3) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+}
+
+.animated-mail .letter .letter-title {
+  margin-top: 5px;
+  margin-left: 2.5px;
+  height: 5px;
+  width: 40%;
+  background: var(--blue-3);
+}
+
+.animated-mail .letter .letter-context {
+  margin-top: 5px;
+  margin-left: 2.5px;
+  height: 5px;
+  width: 20%;
+  background: var(--blue-3);
+}
+
+.animated-mail .letter .letter-stamp {
+  margin-top: 13px;
+  margin-left: 60px;
+  /* border-radius: 100%; */
+  height: 15px;
+  width: 15px;
+  background: url('../../image/favicon/white/favicon.ico');
+  opacity: 1;
+
+}
+
+.letter-image:hover .animated-mail {
+  transform: translateY(25px);
+  -webkit-transform: translateY(25px);
+  -moz-transform: translateY(25px);
+  z-index: 10;
+}
+
+.letter-image:hover .animated-mail .top-fold {
+  transition: transform .4s, z-index .2s;
+  transform: rotateX(90deg);
+  -webkit-transition: transform .4s, z-index .2s;
+  -webkit-transform: rotateX(90deg);
+  -moz-transition: transform .4s, z-index .2s;
+  -moz-transform: rotateX(90deg);
+  z-index: 10 !important;
+}
+
+.letter-image:hover .animated-mail .letter {
+  height: 90px;
+}
+
+
+
+@media only screen and (max-width: 1080px) {
+  .letter-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .letter-image {
+    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .email-text {
+    font-size: 5vw !important;
+  }
+}

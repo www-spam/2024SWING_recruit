@@ -1,0 +1,199 @@
+.caption {
+    font-size: var(--caption);
+    color: var(--blue-1);
+    text-align: center;
+
+
+  }
+  .flickerr {
+    font-size: var(--caption);
+    color: var(--blue-1);
+    text-align: center;
+
+    padding-bottom:1rem;
+    z-index: 0;
+    animation: flickerr 3s infinite
+
+  }
+  @keyframes flickerr {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 1080px) {
+    .recruit-target,
+    .recruit-method {
+        top: auto;
+        width: auto; 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .recruit-target,
+    .recruit-method {
+        top: auto; 
+        width: auto;
+    }
+}
+#recruit {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative; 
+}
+
+.recruit-content {
+    position: relative;
+    z-index: 1;
+}
+.recruit-content > span{
+    font-size: var(--heading2);
+}
+.recruit-content > h1{
+    font-size: var(--hero);
+    margin: 0 0 3.75rem;
+    color: var(--blue-1);
+}
+.recruit-content > h2{
+    font-size: var(--heading1);
+    margin: 0 0 3.75rem;
+
+    color: var(--white);
+}
+.recruit-content > button{
+    font-size: var(--heading3);
+    background-color: var(--blue-1);
+    padding: var(--gutter) var(--offset);
+    border-radius: 20px;
+    color: black !important;
+    position: relative;
+}
+.recruit-content > button:hover{
+    top: -2px;
+}
+@media screen and (max-width: 1080px){
+    .recruit-content > h1{
+        font-size:10vw;
+    }
+    .recruit-content > h2{
+        font-size:6vw;
+    }
+
+    .recruit-content > button{
+        font-size: 2vw;
+        
+    }
+    .recruit-common > span{
+        font-size: 2vw;
+        padding: 1.25rem;
+    }
+  
+}
+@media screen and (max-width: 500px){
+    .recruit-content > h1{
+        font-size: 10vw;
+    }
+    .recruit-content > h2{
+        font-size:6vw;
+    }
+
+
+    .recruit-content > button{
+        font-size: 3vw;
+    }
+    .recruit-common {
+        font-size: 3.5vw;
+        height:100vh;
+        
+        
+
+    }
+    
+    .recruit-target, 
+    .recruit-method{
+        padding-bottom:auto
+    }
+
+    .recruit-target, 
+    .recruit-method,
+    .recruit-common > span{
+        font-size: 4vw;
+        padding: 10px;
+        line-height: 2.0;
+    }
+    .recruit-target, 
+    .recruit-method,
+    .recruit-common > p{
+        font-size: 3vw !important;
+        padding: 10px;
+        line-height: 2.0;
+    }
+
+    .main-section--header {
+        font-size: 8vw !important;
+      }
+    
+
+
+}
+
+
+
+.main-section--header {
+    font-size: var(--heading1);
+    text-align: center;
+    padding-bottom: 3.125rem;
+    color: var(white);
+  }
+
+
+
+
+
+
+
+.recruit-common {
+    
+    font-size: var(--heading3);
+    text-align: center;
+    overflow: auto;
+
+}
+
+.recruit-target,
+.recruit-method {
+    padding-bottom: 9.375rem;
+    color: var(--white);
+    white-space: pre-line;
+    line-height: 3.0;
+    
+    
+}
+
+.recruit-target > span,
+.recruit-method > span {
+    display: inline-block;
+    margin-top: 0.625rem;
+    
+}
+
+.recruit-target > p,
+.recruit-method > p {
+
+    margin-top: 1.875rem;
+    font-size: var(--body1);
+    color: var(--blue-1);
+}
+
+
+

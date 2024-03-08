@@ -1,0 +1,80 @@
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        body .navbar {
+        font-size: initial !important;
+      }
+    
+        .navbar{
+            background-color:rgb(0, 0, 0, 0.7) !important;
+            border-bottom: 0.5px solid #000000 !important;
+            backdrop-filter: blur(9px);
+        }
+        .navbar-brand {
+            font-size: 33px !important;
+            padding-left: 55px;
+        }
+        .navbar-nav{
+            padding-right: 50px;
+        }
+        .nav-item {
+            margin-right: 20px;
+            font-size: initial !important;
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: #FFF !important;
+            transition: color 0.3s, background-color 0.3s;
+            padding: 10px 15px !important;
+            border-radius: 5px;
+        }
+        .navbar-nav .nav-item .nav-link:hover,
+        .navbar-nav .nav-item .nav-link:focus,
+        .navbar-nav .nav-item .nav-link:active {
+            color: #4CC2FF;
+            background-color: transparent;
+            border: 1px solid #4CC2FF;
+        }
+    </style>
+    
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark border-bottom">
+        <div class="container-fluid">
+            <b><a class="navbar-brand" href="{% url 'main:index' %}"><span style="font-family: 'Inter' !important;">SWING</span></a></b>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://swu-swing.github.io/SW1NGL0G/" target="_blank"><span style="font-family: 'Inter' !important;">.LOG</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://swu-swing.github.io/SW1NG4m3/" target="_blank"><span style="font-family: 'Inter' !important;">.WARGAME</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#QnA">.QnA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'recruit:index' %}"><span style="font-family: 'Inter' !important;">.RECRUIT</span></a>
+                    </li>
+                    <li class="nav-item">
+                    {% if user.is_authenticated %}
+                        <a class="nav-link" href="{% url 'common:mypage' %}"><span style="font-family: 'Inter' !important;">.ME</span></a>
+                    {% else %}
+                        <a class="nav-link" href="#LOGIN"><span style="font-family: 'Inter' !important;">.LOGIN</span></a>
+                    {% endif %}
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'common:logout' %}"><span style="font-family: 'Inter' !important;">.LOGOUT</span></a>
+                    {% endif %}
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    
